@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'market';
+  routerOutletComponentClassName: string='';
+
+  onActivate(event: any): void {
+    console.log(event)
+    this.routerOutletComponentClassName= event.constructor.name;
+    console.log(event.constructor.name)
+    
+  }
 }

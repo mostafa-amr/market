@@ -1,0 +1,113 @@
+<h1 class="mb-3 text-center">signup</h1>
+<form class="m-auto" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+  <div class="mb-3">
+    <label for="exampleInputname" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputname"
+      formControlName="name"
+    />
+    <div
+      class="form-text text-danger mt-0"
+      *ngIf="
+        signUpForm.controls['name'].touched &&
+        signUpForm.controls['name'].invalid
+      "
+    >
+      <small *ngIf="signUpForm.controls['name'].errors?.['required']"
+        >required</small
+      >
+      <!-- <small *ngIf="email.errors?.['pattern']">enter valid email</small> -->
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      formControlName="email"
+    />
+    <div
+      class="form-text text-danger mt-0"
+      *ngIf="
+        signUpForm.controls['email'].touched &&
+        signUpForm.controls['email'].invalid
+      "
+    >
+      <small *ngIf="signUpForm.controls['email'].errors?.['required']"
+        >required</small
+      >
+      <small *ngIf="signUpForm.controls['email'].errors?.['email']"
+        >enter valid email</small
+      >
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputuname" class="form-label">User-Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputuname"
+      formControlName="uname"
+    />
+    <div
+      class="form-text text-danger mt-0"
+      *ngIf="
+        signUpForm.controls['uname'].touched &&
+        signUpForm.controls['uname'].invalid
+      "
+    >
+      <small *ngIf="signUpForm.controls['uname'].errors?.['required']"
+        >required</small
+      >
+      <small *ngIf="signUpForm.controls['uname'].errors?.['pattern']"
+        >enter one word no space</small
+      >
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+      formControlName="pass1"
+    />
+    <div
+      class="form-text text-danger mt-0"
+      *ngIf="
+        signUpForm.controls['pass1'].touched &&
+        signUpForm.controls['pass1'].invalid
+      "
+    >
+      <small *ngIf="signUpForm.controls['pass1'].errors?.['required']"
+        >required</small
+      >
+      <small *ngIf="signUpForm.controls['pass1'].errors?.['pattern']"
+        >enter one sword no space</small
+      >
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword2" class="form-label"
+      >Confirm Password</label
+    >
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword2"
+      formControlName="pass2"
+    />
+    <div class="form-text text-danger mt-0" *ngIf="signUpForm.invalid">
+      <!-- <small *ngIf="signUpForm.controls['pass2'].errors?.['required']"
+        >required</small
+      > -->
+      <small *ngIf="signUpForm.errors?.['matchPassword']">not matching</small>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100">Submit</button>
+</form>

@@ -1,0 +1,12 @@
+button{
+    border-style: none ;
+    background-color: transparent;
+}
+img{
+    width: 50px;
+}
+tr{
+    border: 1px solid black;
+}
+td{height: 70px;
+border-style: none;}

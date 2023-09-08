@@ -1,0 +1,25 @@
+<div class="card h-100">
+  <a [routerLink]="['Details', data.id]">
+    <img [src]="data.images[0]" class="card-img-top" alt="..."
+  /></a>
+  <div class="card-body position-relative">
+    <h5 class="card-title">{{ data.title }}</h5>
+    <p class="card-text mb-2">{{ data.price | currency }}</p>
+    <p class="card-text mb-5">
+      {{ data.description }}
+    </p>
+    <div class="positio">
+      <button class="btn btn-primary" (click)="addToCart(data.id)">
+        add to cart
+      </button>
+    </div>
+  </div>
+  <div class="card-footer d-flex justify-content-between">
+    <small class="text-body-secondary">{{
+      data.createdAt | date : "short"
+    }}</small>
+    <small [ngStyle]="{ color: data.stock > 0 ? 'green' : 'red' }">{{
+      data.stock | stock
+    }}</small>
+  </div>
+</div>

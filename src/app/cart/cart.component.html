@@ -1,0 +1,42 @@
+<h1>cart</h1>
+<button (click)="ay7aga()"></button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">image</th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">quantity</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="align-items-center"
+      *ngFor="let item of cartItems; let i = index"
+    >
+      <td><img [src]="item.images[0]" class="card-img-top" alt="..." /></td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.price }}</td>
+
+      <td class="d-flex h-100" style="height: 70px">
+        <button style="height: 25px" (click)="minCounter(item.numbers, i)">
+          -
+        </button>
+        {{ item.numbers }}
+        <button
+          style="height: 25px"
+          (click)="addCounter(item.numbers, i, item.id)"
+        >
+          +
+        </button>
+      </td>
+      <td>
+        <button (click)="removeItem(i, item.id, item.numbers, item.price)">
+          remove
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>total:{{ price }}</h2>

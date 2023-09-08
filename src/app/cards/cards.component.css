@@ -1,0 +1,10 @@
+img{
+    height: 200px;
+    object-fit: contain;
+}
+.positio{
+    position: absolute;
+    bottom: 3px;
+    right: 50%;
+    transform: translateX(50%);
+}
